@@ -19,12 +19,14 @@ public class HomeController {
 
 	@Autowired
 	ServiceInterf serviceInterf;
-
+	
+//After authentication student form will be open through this URL.
 	@RequestMapping("/")
 	public String login() {
 		return "studentForm";
 	}
 
+//This request bring the student data from form and store in database.	
 	@RequestMapping("/register")
 	public String saveStudent(@ModelAttribute Student student, @RequestParam("projName") String[] projName) {
 
